@@ -15,7 +15,6 @@ public class App {
             System.out.println("O que deseja fazer?\n(1) - Cadastrar veículo\t\t(2) - Dados do veículo\n(3) - Listar todos os veículos\t(4) - Percorrer / Incrementar quilometragem\n(5) - Visualizar quilometragens\t(0) - SAIR");
             opcao = scan.nextInt();
             linhaHorizontal();
-            System.out.println();
 
             switch (opcao) {
                 case 1:
