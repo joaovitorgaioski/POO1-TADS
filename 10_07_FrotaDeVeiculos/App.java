@@ -9,8 +9,7 @@ public class App {
         ArrayList<Caminhao> caminhoes = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         int opcao = 1, indexCarro = -1, indexCaminhao = -1, kmRodados = 0;
-        System.out.println("hi");
-
+        
         while (opcao != 0) {
             linhaHorizontal();
             System.out.println("O que deseja fazer?\n(1) - Cadastrar veículo\t\t(2) - Dados do veículo\n(3) - Listar todos os veículos\t(4) - Percorrer / Incrementar quilometragem\n(5) - Visualizar quilometragens\t(0) - SAIR");
@@ -167,3 +166,4 @@ public class App {
         System.out.println("\n---==========---\n");
     }
 }
+
