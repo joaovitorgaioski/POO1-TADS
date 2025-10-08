@@ -9,6 +9,7 @@ public class App {
         ArrayList<Caminhao> caminhoes = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         int opcao = 1, indexCarro = -1, indexCaminhao = -1, kmRodados = 0;
+        System.out.println("hi");
 
         while (opcao != 0) {
             linhaHorizontal();
