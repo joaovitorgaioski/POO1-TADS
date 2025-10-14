@@ -48,7 +48,6 @@ public class App {
                     listarClientes(clientes);
                 break;
                     
-                    
                 case 0:
                     System.out.println("Saindo.");
                     break;
@@ -72,4 +71,5 @@ public class App {
     public static void linhaHorizontal() {
         System.out.println("\n--" + "=".repeat(40) + "--\n");
     }
+
 }
