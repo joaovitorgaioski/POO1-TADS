@@ -29,23 +29,25 @@ public abstract class Cliente {
     public void setNome(String nome) {
         if (nome != null && !nome.isEmpty()) {
             this.nome = nome;
+            System.out.println("Cliente cadastrado com sucesso!");
         } else {
-            System.out.println("Esse nome não é válido.");
+            System.out.println("Erro: esse nome não é válido.");
         }
     }
 
     // Métodos
     public void realizarCadastro() {
-        System.out.println("Olá, qual o seu nome?");
+        System.out.println("Olá, qual o nome do cliente?");
         setNome(scan.nextLine());
     }
 
-    public void fazerPedidos() {
+    public void fazerPedido() {
         int pedido = -1;
 
+        System.out.println("Nossa opções:");
         while (pedido != 0) {
             System.out.println("1 - Pão (R$0.50)\t2 - Coxinha (R$4.50)\t3 - Bolo de Chocolate (R$5.00)\n"
-                    + "4 - Café (R$3.00)\t5 - Rissole (R$5.00)\t6 - Sonho Pequeno (R$1.00)\n0 - SAIR");
+                    + "4 - Café (R$3.00)\t5 - Rissole (R$5.00)\t6 - Sonho Pequeno (R$1.00)\n0 - FINALIZAR PEDIDO");
             pedido = scan.nextInt();
 
             processarPedido(pedido);
@@ -82,7 +84,7 @@ public abstract class Cliente {
             case 0:
                 break;
             default:
-                System.out.println("Opção inválida!");
+                System.out.println("Erro: opção inválida.");
                 break;
         }
     }
@@ -99,7 +101,7 @@ public abstract class Cliente {
             System.out.println("\t" + this.listaPedidos.get(i));
         }
 
-        System.out.println("Total: R$" + getConta());
+        System.out.println("\nTotal: R$" + getConta());
     }
 
 }

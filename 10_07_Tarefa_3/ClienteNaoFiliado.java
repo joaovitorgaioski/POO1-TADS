@@ -13,10 +13,4 @@ public class ClienteNaoFiliado extends Cliente {
     public String getTipoCliente() {
         return "Cliente não filiado (sem desconto)";
     }
-
-    @Override
-    public void exibirConta() {
-        super.exibirConta();
-        App.linhaHorizontal();
-    }
 }

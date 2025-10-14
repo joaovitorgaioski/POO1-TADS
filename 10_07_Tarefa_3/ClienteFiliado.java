@@ -31,6 +31,5 @@ public class ClienteFiliado extends Cliente {
         calcularDesconto();
         super.exibirConta();
         System.out.printf("Total a pagar: R$%.2f\n", getContaDescontada());
-        App.linhaHorizontal();
     }
 }
