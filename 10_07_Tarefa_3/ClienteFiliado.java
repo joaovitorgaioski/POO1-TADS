@@ -27,9 +27,9 @@ public class ClienteFiliado extends Cliente {
     }
 
     @Override
-    public void exibirConta() {
+    public void exibirComanda() {
         calcularDesconto();
-        super.exibirConta();
+        super.exibirComanda();
         System.out.printf("Total a pagar: R$%.2f\n", getContaDescontada());
     }
 }

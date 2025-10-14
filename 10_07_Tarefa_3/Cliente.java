@@ -5,8 +5,9 @@ import java.util.Scanner;
 public abstract class Cliente {
     protected Scanner scan = new Scanner(System.in);
     protected ArrayList<String> listaPedidos = new ArrayList<>();
-    protected String nome;
     protected double conta;
+    protected String nome;
+    protected String telefone;
 
     // Construtores
     public Cliente() {
@@ -18,20 +19,32 @@ public abstract class Cliente {
 
     // Getters
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public double getConta() {
-        return conta;
+        return this.conta;
+    }
+
+    public String getTelefone(){
+        return this.telefone;
     }
 
     // Setters
     public void setNome(String nome) {
         if (nome != null && !nome.isEmpty()) {
             this.nome = nome;
-            System.out.println("Cliente cadastrado com sucesso!");
         } else {
             System.out.println("Erro: esse nome não é válido.");
+        }
+    }
+
+    public void setTelefone(String telefone) {
+        if (telefone != null && !telefone.isEmpty()) {
+            this.telefone = telefone;
+            System.out.println("Cliente cadastrado com sucesso!");
+        } else {
+            System.out.println("Erro: esse telefone não é válido.");
         }
     }
 
@@ -39,6 +52,8 @@ public abstract class Cliente {
     public void realizarCadastro() {
         System.out.println("Olá, qual o nome do cliente?");
         setNome(scan.nextLine());
+        System.out.println("Qual o telefone?");
+        setTelefone(scan.nextLine());;
     }
 
     public void fazerPedido() {
@@ -91,7 +106,7 @@ public abstract class Cliente {
 
     public abstract String getTipoCliente();
 
-    public void exibirConta() {
+    public void exibirComanda() {
         App.linhaHorizontal();
         System.out.println("Nome: " + getNome());
         System.out.println("Tipo: " + getTipoCliente());

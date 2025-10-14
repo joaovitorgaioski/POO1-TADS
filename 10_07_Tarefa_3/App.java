@@ -13,14 +13,11 @@ public class App {
         while (opcao != 0) {
             linhaHorizontal();
             System.out.println(
-                    "O que desejas fazer?\n(1) - Cadastrar cliente comum\t\t(2) - Cadastrar cliente filiado\n(3) - Realizar pedido\t\t\t(0) - Sair");
+                    "O que desejas fazer?\n(1) - Cadastrar cliente comum\t\t(2) - Cadastrar cliente filiado\n(3) - Realizar pedido\t\t\t(4) - Listar clientes\n(0) - Sair");
             opcao = scan.nextInt();
             linhaHorizontal();
 
             switch (opcao) {
-                case 0:
-                    System.out.println("Saindo.");
-                    break;
 
                 case 1:
                     indice++;
@@ -42,15 +39,24 @@ public class App {
                         listarClientes(clientes);
                         opcao = scan.nextInt();
                         clientes.get(opcao).fazerPedido();
-                        clientes.get(opcao).exibirConta();
+                        clientes.get(opcao).exibirComanda();
                     }
+                    opcao = -1;
+                    break;
+
+                case 4:
+                    listarClientes(clientes);
+                break;
+                    
+                    
+                case 0:
+                    System.out.println("Saindo.");
                     break;
 
                 default:
                     System.out.println("Erro: escolha uma opção válida.");
                     break;
             }
-            opcao = -1;
         }
         scan.close();
     }
@@ -59,7 +65,7 @@ public class App {
 
     public static void listarClientes(ArrayList<Cliente> clientes) {
         for (int i = 0; i < clientes.size(); i++) {
-            System.out.println(i + " - " + clientes.get(i).getNome() + "\t" + clientes.get(i).getTipoCliente());
+            System.out.println(i + " - " + clientes.get(i).getNome() + "\t\t" + clientes.get(i).getTelefone() + "\t\t" + clientes.get(i).getTipoCliente());
         }
     }
 

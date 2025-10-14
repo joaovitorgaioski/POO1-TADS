@@ -11,6 +11,6 @@ public class ClienteNaoFiliado extends Cliente {
     // Métodos especializados
     @Override
     public String getTipoCliente() {
-        return "Cliente não filiado (sem desconto)";
+        return "Cliente não filiado";
     }
 }
