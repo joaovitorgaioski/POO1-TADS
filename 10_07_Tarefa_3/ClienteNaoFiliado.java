@@ -4,24 +4,19 @@ public class ClienteNaoFiliado extends Cliente {
     public ClienteNaoFiliado() {
     }
 
-    public ClienteNaoFiliado(String nome, int tipoFiliacao) {
-        super(nome, tipoFiliacao);
+    public ClienteNaoFiliado(String nome) {
+        super(nome);
     }
 
     // Métodos especializados
     @Override
-    public void calcularDesconto() {
-        this.contaFinal = this.conta; // Sem desconto
-    }
-
-    @Override
     public String getTipoCliente() {
-        return "Cliente Não Filiado";
+        return "Cliente não filiado (sem desconto)";
     }
 
     @Override
     public void exibirConta() {
-        calcularDesconto();
         super.exibirConta();
+        App.linhaHorizontal();
     }
 }
