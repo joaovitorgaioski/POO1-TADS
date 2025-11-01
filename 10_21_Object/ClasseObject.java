@@ -1,9 +1,12 @@
 public class ClasseObject {
-    public static void main(String[] args){
-        Pessoa p1 = new Pessoa("João", "18", "123456789");
-        Pessoa p2 = new Pessoa("João", "18", "123456789");
+    public static void main(String[] args) {
 
-        System.out.println(p1.equals(p2));
+        // Exibindo paises e suas características
+        for (Pais pais : Pais.values()) {
+            System.out.println("-----==========-----");
+            System.out.println("Nome: " + pais.getNome());
+            System.out.println("Sigla: " + pais.getSigla());
+            System.out.println("Continente: " + pais.getContinente());
+        }
     }
 }
-
