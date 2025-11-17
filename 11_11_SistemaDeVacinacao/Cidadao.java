@@ -6,7 +6,7 @@ import java.util.Date;
 public class Cidadao extends Pessoa {
 
     private int qntdDoses;
-    ArrayList<Calendar> dataDose = new ArrayList<>();
+    private ArrayList<Calendar> dataDoses = new ArrayList<>();
 
     public Cidadao() {
 
@@ -21,6 +21,10 @@ public class Cidadao extends Pessoa {
         return this.qntdDoses;
     }
 
+    public String getDataDose(int i) {
+        return Util.formatarDataParaString(this.dataDoses.get(i));
+    }
+
     public void setQntdDoses(int qntdDoses) {
         this.qntdDoses = qntdDoses;
     }
@@ -31,21 +35,27 @@ public class Cidadao extends Pessoa {
         setNome(scan.next());
         System.out.print("CPF de " + getNome() + ": ");
         setCpf(scan.next());
-        System.out.print("Quantidade de doses que" + getNome() + " já tomou: ");
+        System.out.print("Quantidade de doses que " + getNome() + " já tomou: ");
         setQntdDoses(scan.nextInt());
     }
 
-    public void adicionarDataDose(Date dataDose, int indiceDose) {
-        this.dataDose.add(Calendar.getInstance());
-        this.dataDose.get(indiceDose).setTime(dataDose);
+    public void adicionarDataDose(Date dataDoses, int indiceDose) {
+        this.dataDoses.add(Calendar.getInstance());
+        this.dataDoses.get(indiceDose).setTime(dataDoses);
     }
 
     public boolean compararDatasDoses(int indiceDose) {
-        Calendar dataAnterior = dataDose.get(indiceDose - 1);
-        Calendar ultimaData = dataDose.get(indiceDose);
+        Calendar dataAnterior = dataDoses.get(indiceDose - 1);
+        Calendar ultimaData = dataDoses.get(indiceDose);
 
-        dataAnterior.add(Calendar.MONTH, 4);
-        
-        return ultimaData.after(dataAnterior);
+        ultimaData.add(Calendar.MONTH, -4);
+
+        if (ultimaData.before(dataAnterior)) {
+            ultimaData.add(Calendar.MONTH, 4);
+            return false;
+        } else {
+            ultimaData.add(Calendar.MONTH, 4);
+            return true;
+        }
     }
 }

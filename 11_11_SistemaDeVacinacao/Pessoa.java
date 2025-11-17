@@ -10,7 +10,7 @@ public class Pessoa {
 
     }
 
-    public Pessoa(String nome, String cpf){
+    public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
@@ -25,6 +25,10 @@ public class Pessoa {
 
     public String getNome() {
         return this.nome;
+    }
+
+    public String getCpf() {
+        return this.cpf;
     }
 
     public void cadastrar() {

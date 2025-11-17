@@ -9,7 +9,7 @@ public class Util {
     static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     static Calendar calendar = Calendar.getInstance();
 
-    public static void linhaHorizontal(){
+    public static void linhaHorizontal() {
         System.out.println("----------==========----------");
     }
 
@@ -24,10 +24,14 @@ public class Util {
         return calendar.getTime();
     }
 
-    public static String obterDataAtual(){
+    public static String obterDataAtual() {
         Calendar dataAtual = Calendar.getInstance();
         Date dataAtualDate = dataAtual.getTime();
 
         return sdf.format(dataAtualDate);
+    }
+
+    public static String formatarDataParaString(Calendar data){
+        return sdf.format(data.getTime());
     }
 }
