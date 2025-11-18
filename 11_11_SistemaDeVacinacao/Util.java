@@ -18,7 +18,7 @@ public class Util {
             Date dataFormatada = sdf.parse(data);
             calendar.setTime(dataFormatada);
         } catch (ParseException e) {
-            System.err.println("Erro: não foi possível converter a String em Date.");
+            System.out.println("Erro: não foi possível converter a String em Date.");
         }
 
         return calendar.getTime();
@@ -31,7 +31,7 @@ public class Util {
         return sdf.format(dataAtualDate);
     }
 
-    public static String formatarDataParaString(Calendar data){
+    public static String formatarDataParaString(Calendar data) {
         return sdf.format(data.getTime());
     }
 }

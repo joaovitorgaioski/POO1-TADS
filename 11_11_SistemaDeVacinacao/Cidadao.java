@@ -26,13 +26,19 @@ public class Cidadao extends Pessoa {
     }
 
     public void setQntdDoses(int qntdDoses) {
-        this.qntdDoses = qntdDoses;
+        if (qntdDoses > 0 && qntdDoses < 100) {
+            this.qntdDoses = qntdDoses;
+        } else {
+            System.out.println("Erro: a quantidade de doses inserida não é aceita.");
+            System.out.print("Quantidade de doses que " + getNome() + " já tomou: ");
+            setQntdDoses(scan.nextInt());
+        }
     }
 
     @Override
     public void cadastrar() {
         System.out.print("Nome do cidadão: ");
-        setNome(scan.next());
+        setNome(scan.nextLine());
         System.out.print("CPF de " + getNome() + ": ");
         setCpf(scan.next());
         System.out.print("Quantidade de doses que " + getNome() + " já tomou: ");
@@ -45,6 +51,10 @@ public class Cidadao extends Pessoa {
     }
 
     public boolean compararDatasDoses(int indiceDose) {
+        if (indiceDose == 0) {
+            return true;
+        }
+
         Calendar dataAnterior = dataDoses.get(indiceDose - 1);
         Calendar ultimaData = dataDoses.get(indiceDose);
 

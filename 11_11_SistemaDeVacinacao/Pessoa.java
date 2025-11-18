@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Pessoa {
+abstract class Pessoa {
     Scanner scan = new Scanner(System.in);
 
     private String nome, cpf;
@@ -31,10 +31,5 @@ public class Pessoa {
         return this.cpf;
     }
 
-    public void cadastrar() {
-        System.out.println("Nome da pessoa: ");
-        setNome(scan.next());
-        System.out.println("CPF da pessoa: ");
-        setCpf(scan.next());
-    }
+    public abstract void cadastrar();
 }

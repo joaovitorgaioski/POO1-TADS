@@ -10,7 +10,7 @@ public class Enfermeira extends Pessoa {
     @Override
     public void cadastrar() {
         System.out.println("Nome da enfermeira: ");
-        setNome(scan.next());
+        setNome(scan.nextLine());
         System.out.println("CPF da enfermeira: ");
         setCpf(scan.next());
     }
