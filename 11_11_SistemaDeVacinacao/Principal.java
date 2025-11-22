@@ -89,7 +89,12 @@ public class Principal {
                     break;
 
                 case 0:
-                    System.out.println("-----== Obrigado por usar nosso sistema de vacinação! ==-----");
+                    System.out.println("Realmente deseja sair do sistema?\n(0) - Sair\t(1) - Cancelar");
+                    opcao = scan.nextInt();
+
+                    if (opcao == 0) {
+                        System.out.println("-----== Obrigado por usar nosso sistema de vacinação! ==-----");
+                    }
                     break;
 
                 default:
