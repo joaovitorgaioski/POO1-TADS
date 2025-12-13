@@ -19,10 +19,10 @@ public class App {
         frame.setVisible(true);
 
         JLabel lblTitulo = new JLabel("Bem vindo a Cafeteria Bom Jesus!");
-        lblTitulo.setBounds(150, 0, 500, 30);
+        lblTitulo.setBounds(150, 10, 500, 30);
 
         JLabel lblSubtitulo = new JLabel("O que deseja fazer?");
-        lblSubtitulo.setBounds(150, 20, 500, 30);
+        lblSubtitulo.setBounds(150, 30, 500, 30);
 
         JButton btnCadastrarCliente = new JButton("Cadastrar cliente");
         btnCadastrarCliente.setBounds(150, 100, 200, 30);
